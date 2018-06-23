@@ -1,22 +1,27 @@
-int green = 4;
-int orange = 3;
-int red = 2;
+// I/O pinnit johon LEDit on kytketty
+const int vLed = 4; // Vihreä LED
+const int oLed = 3; // Oranssi LED
+const int pLed = 2; // Punainen LED
 
-void blinkLed(int led, int delayInSeconds) {
+// LED:n ohjaaminen päälle halutuksi ajaksi (sekunteina)
+void ledinVilkutus(int led, int aikaSekunteina) {
     digitalWrite(led, HIGH);
-    delay(delayInSeconds * 1000);
+    delay(aikaSekunteina * 1000);
     digitalWrite(led, LOW);
 }
 
+// Mikrokontrollerin ja ohjelman alustaminen, suoritetaan kerran
+// kontrollerin käynnistämisen yhteydessä.
 void setup() {
-    pinMode(green, OUTPUT);
-    pinMode(orange, OUTPUT);
-    pinMode(red, OUTPUT);
+    pinMode(vLed, OUTPUT);
+    pinMode(oLed, OUTPUT);
+    pinMode(pLed, OUTPUT);
 }
 
+// Pääsilmukka jota kutsutaan loputtomasti
 void loop() {
-    blinkLed(green, 3);
-    blinkLed(orange, 1);
-    blinkLed(red, 3);
+    ledinVilkutus(vLed, 3);
+    ledinVilkutus(oLed, 1);
+    ledinVilkutus(pLed, 3);
 }
 
