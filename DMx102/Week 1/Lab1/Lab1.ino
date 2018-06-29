@@ -1,3 +1,7 @@
+/*
+ * Lab 1 - liikennevalojen ohjaus
+ */
+
 // I/O pinnit johon LEDit on kytketty
 const int vLed = 4; // Vihreä LED
 const int oLed = 3; // Oranssi LED
