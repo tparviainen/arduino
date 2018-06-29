@@ -40,7 +40,7 @@ void loop() {
 
   // Luetaan painonapin tila jonka perusteella päätetään sytytetäänkö
   // jalankulkijoille valoja.
-  int buttonState = digitalRead(jalankulkijaPainike);
+  int painikkeenTila = digitalRead(jalankulkijaPainike);
 
   // Oranssi ledi ON/OFF
   digitalWrite(autoilijaOranssi, HIGH);
@@ -51,7 +51,7 @@ void loop() {
   digitalWrite(autoilijaPunainen, HIGH);
 
   // Tarkistetaan onko jalankulkija painanut painonappia
-  if (buttonState == HIGH) {
+  if (painikkeenTila == HIGH) {
     // Jalankulkija haluaa ylittää tien, vaihdetaan jalankulkijoille vihreät
     digitalWrite(jalankulkijaPunainen, LOW);
     digitalWrite(jalankulkijaVihrea, HIGH);
